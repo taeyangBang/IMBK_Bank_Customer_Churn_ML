@@ -16,7 +16,7 @@
 - 사후분석: SHAP
 
 # 데이터 전처리
-1. 결측치 확인
+1. 결측치 확인 - 결측치 없음
 2. 불필요한 변수 제거 - customer id
 3. 범주형 변수 인코딩 - country, gender
 
@@ -35,7 +35,7 @@
 - 상품 수별 고객 수 및 이탈률 확인 결과, 상품 보유량이 많은 고객군에서 높은 이탈률이 나타났습니다. 다만, 이탈 클래스의 데이터 비중이 현저히 낮은 클래스 불균형 문제가 존재합니다. 분석의 신뢰도를 확보하기 위해 오버샘플링(SMOTE 등)이나 가중치 조정 등의 필요해 보인다.
 
 # 모델링
-1. AutoML - 상위 성능모델 선정
+1. AutoML - 상위 성능 모델 선정
 <img width="982" height="557" alt="image" src="https://github.com/user-attachments/assets/a561a801-aa6f-4a87-b967-60bbc75638ef" />
 
 - F1_score를 기준으로 상위 모델 선정. catboost, lightgbm, gbc, xgboost
