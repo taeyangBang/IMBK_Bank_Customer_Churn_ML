@@ -41,6 +41,7 @@
 - F1_score를 기준으로 상위 모델 선정. catboost, lightgbm, gbc, xgboost
 
 2. optuna - 해당 모델 하이퍼파라미터 튜닝
+
 | Model | Hyperparameter | Range |
 | :--- | :----: | ---: |
 | CatBoost | iterations | 100 ~ 500 |
