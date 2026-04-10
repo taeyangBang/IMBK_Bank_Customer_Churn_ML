@@ -24,7 +24,28 @@
 1. 칼럼 별 이탈 여부와 상관관계
 <img width="1778" height="1180" alt="output" src="https://github.com/user-attachments/assets/5a9bf405-7777-4784-999f-374e22879e7f" />
 
-- y(이탈 여부)의 비율 확인 결과, 이탈 고객에 비해 유지 고객의 비율이 훨씬 높다 -> 클래스 불균형
+- y(이탈 여부)의 비율 확인 결과, 이탈 고객에 비해 유지 고객의 비율이 훨씬 높다. -> 클래스 불균형
 - 나이에 따른 이탈여부를 kde그래프로 확인 결과, 유지고객은 30대가 가장 높고, 이탈고객은 40대가 가장 많았다.
 - 국가별 이탈률 확인 결과, 1위: 독일 / 2위: 스페인 / 3위: 프랑스 순으로 나왔다.
-- 수 간 상관관계를 히트맵으로 확인한 결과, 큰 상관관계를 보이는 변수의 조합은 발견되지 않았고, 그나마 상품의 수와 계좌 잔액이 -0.30으로 음의 상관관계를 보이고 있다.
+- 변수 간 상관관계를 히트맵으로 확인한 결과, 뚜렷한 상관관계를 보이는 변수의 조합은 발견되지 않았고, 상품의 수와 계좌 잔액이 -0.30으로 음의 상관관계를 보이고 있다.
+
+2. 상품 수별 고객 수 및 이탈률(%)
+<img width="1380" height="580" alt="output2" src="https://github.com/user-attachments/assets/1a1a4006-f91d-4080-a68e-20f690ffc4fc" />
+
+- 클래스 불균형이 보여 상품 수 별 고객 수와 이탈률을 시각화한 결과, 상품 보유량이 많은 고객들의 이탈률이 높은 건 맞지만, 이탈 고객의 데이터가 훨씬 작아 이를 해결하여 자세한 분석이 필요해보인다.
+
+# 모델링
+1. AutoML - 상위 성능모델 선정
+<img width="982" height="557" alt="image" src="https://github.com/user-attachments/assets/a561a801-aa6f-4a87-b967-60bbc75638ef" />
+
+- F1_score를 기준으로 상위 모델 선정. catboost, lightgbm, gbc, xgboost
+
+2. optuna - 해당 모델 하이퍼파라미터 튜닝
+| Model | Hyperparameter | Range |
+| :--- | :----: | ---: |
+| CatBoost | iterations | 100 ~ 500 |
+|  | depth | 4 ~ 10 |
+|  | learning_rate | 0.01 ~ 0.1 |
+|  | l2_leaf_reg | 1 ~ 10 |
+
+
