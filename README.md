@@ -63,5 +63,15 @@
 |  | max_depth | 3 ~ 10 |
 |  | subsample | 0.6 ~ 1.0 |
 
+3. 모델 학습 결과 - f1_score
+
+| Model | f1_score |
+| :--- | :----: |
+| CatBoost | 0.6097560975609756 |
+| LightGBM | 0.5789473684210527 |
+| XGBoost | 0.593607305936073 |
+| Gradient Boosting | 0.6033182503770739 |
+
+
 
 
