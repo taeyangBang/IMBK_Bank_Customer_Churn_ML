@@ -40,6 +40,7 @@
 
 - F1_score를 기준으로 상위 모델 선정. catboost, lightgbm, gbc, xgboost
 
+
 2. optuna - 해당 모델 하이퍼파라미터 튜닝
 
 | Model | Hyperparameter | Range |
@@ -71,6 +72,23 @@
 | LightGBM | 0.5789473684210527 |
 | XGBoost | 0.593607305936073 |
 | Gradient Boosting | 0.6033182503770739 |
+
+4. Stacking
+- 1차 모델: LightGBM, XGBoost, Gradient Boosting
+- 메타 모델: CatBoost
+- f1_score: 0.5824345146379045
+
+# 사후 분석
+
+<img width="758" height="546" alt="SHAP Value" src="https://github.com/user-attachments/assets/cb13d1f4-7223-4b01-b1e3-61d3557f1fd7" />
+
+1. 주요 칼럼 해석
+2. 
+- products_number: 보유 중인 상품 수가 너무 많으면 이탈위험이 있다. 1~2개 정도 적당히 보유한 고객들이 유지 될 확률이 높다.
+- age: 나이가 많을 수록 이탈 확률이 매우 높아지고, 젊은 세대는 상대적으로 이탈 확률이 낮다. 고령층 고객을 대상으로하는 프로모션 및 서비스가 필요해보인다.
+- active_member: 활성 고객과 비활성 고객은 명확하게 갈라져있다. 활동이 없는 고객은 이탈할 가능성이 매우 높다. 비활성 고객이 되기전에 예측하여 여러 프로모션을 통해 고객유치전략을 세워야한다.
+- balance: 잔고가 높을 수록 이탈률이 높은 경향이 있다. 우량 고객을 잡기 위한 전략이 필요하다.
+
 
 
 
