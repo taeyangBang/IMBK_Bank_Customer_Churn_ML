@@ -48,5 +48,20 @@
 |  | depth | 4 ~ 10 |
 |  | learning_rate | 0.01 ~ 0.1 |
 |  | l2_leaf_reg | 1 ~ 10 |
+| LightGBM | n_estimators | 100 ~ 500 |
+|  | max_depth | 3 ~ 15 |
+|  | learning_rate | 0.01 ~ 0.1 |
+|  | num_leaves | 20 ~ 150 |
+|  | min_child_samples | 5 ~ 50 |
+| XGBoost | n_estimators | 100 ~ 500 |
+|  | max_depth | 3 ~ 15 |
+|  | learning_rate | 0.01 ~ 0.1 |
+|  | subsample | 0.6 ~ 1.0 |
+|  | colsample_bytree | 0.6 ~ 1.0 |
+| Gradient Boosting | n_estimators | 100 ~ 300 |
+|  | learning_rate | 0.01 ~ 0.1 |
+|  | max_depth | 3 ~ 10 |
+|  | subsample | 0.6 ~ 1.0 |
+
 
 
